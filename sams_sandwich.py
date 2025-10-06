@@ -1,4 +1,4 @@
-
+# Thingy
 
 def force_name(message, min_length=2, max_length=20):
     # loop until a valid name is entered
@@ -46,3 +46,69 @@ def force_number(message, is_int, min=0, max=120):
 
         # number passed all checks so return it
         return unverified_num
+    
+def option_selection(options, subject, multi = True):
+    max = len(options)
+    print("\n")
+    if (multi):
+        print("*"*5, f" {subject} SELECTIONS ", "*"*5)
+    else:
+        print("*"*5, f" {subject} SELECTIONS - Choose as many as you like", "*"*5)
+    i = 0
+    for option in options:
+        print(f"{i+1}. {option}")
+        i += 1
+    print("*"*30, "\n")
+    if multi:
+        option = []
+    while True:
+        selected_option = force_number(f"Select an option to add (1-{max}): ", True, 1, max)
+        print(f"You selected '{options[selected_option-1]}'")
+        if multi:
+            if selected_option == max:
+                return option
+            else:
+                option.append(options[selected_option-1])
+        else:
+            return options[selected_option-1]
+    
+def salad_selection(options):
+    print("\n")
+    print("*"*5, f" SALAD SELECTIONS ", "*"*5)
+    print("You may pick as many salads as you would like.")
+    i = 0
+    for option in options:
+        print(f"{i+1}. {option}")
+        i += 1
+    print("*"*30, "\n")
+    
+        
+def force_phone(min, max):
+    while True:
+        unvalidated_number = str(input("Your mobile phone number: "))
+        if len(unvalidated_number) < min or len(unvalidated_number) > max or not unvalidated_number.isnumeric():
+            print(f"Your phone number must only have {min}-{max} numbers.")
+        else:
+            validated_number = unvalidated_number
+            return validated_number
+
+bread_options = ["White", "Wholemeal", "Malted Rye", "Flatbread", "Italian", "No bread"]
+meat_options = ["Pastrami", "Pepperoni", "Turkey", "Chicken", "Champaign Ham", "No meat"]
+cheese_options = ["Cheddar", "Mozzarella", "Edam", "Camembert", "No cheese"]
+salad_options = ["Caesars salad", "Small salad", "Large salad", "Blue salad", "Red Salad", "No salad"]
+dressing_options = ["Sulfuric acid", "Balsamic vinegar", "Sam's Special Dressing", "No dressing"]
+
+selected_bread = option_selection(bread_options, "BREAD")
+selected_meat = option_selection(meat_options, "MEAT")
+selected_cheese = option_selection(cheese_options, "CHEESE")
+selected_salad = option_selection(salad_options, "SALAD", True)
+selected_dressing = option_selection(dressing_options, "DRESSING")
+
+first_name = force_name("Enter your first name: ", 3, 20)
+last_name = force_name("Enter your last name: ", 3, 20)
+phone_number = force_phone(9, 12)
+
+sandwich_order = first_name, last_name, phone_number, selected_bread, selected_meat, selected_cheese, selected_salad, selected_dressing
+
+for item in sandwich_order:
+    print(item)
