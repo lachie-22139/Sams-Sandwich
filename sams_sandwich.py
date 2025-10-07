@@ -47,28 +47,28 @@ def force_number(message, is_int, min=0, max=120):
         # number passed all checks so return it
         return unverified_num
     
-def option_selection(options, subject, multi = True):
+def option_selection(options, subject, multi = False):
     max = len(options)
     print("\n")
     if (multi):
         print("*"*5, f" {subject} SELECTIONS ", "*"*5)
     else:
         print("*"*5, f" {subject} SELECTIONS - Choose as many as you like", "*"*5)
-    i = 0
-    for option in options:
-        print(f"{i+1}. {option}")
-        i += 1
-    print("*"*30, "\n")
     if multi:
-        option = []
+        option_list = []
     while True:
+        i = 0
+        for option in options:
+            print(f"{i+1}. {option}")
+            i += 1
+        print("*"*30, "\n")
         selected_option = force_number(f"Select an option to add (1-{max}): ", True, 1, max)
         print(f"You selected '{options[selected_option-1]}'")
         if multi:
             if selected_option == max:
-                return option
+                return option_list
             else:
-                option.append(options[selected_option-1])
+                option_list.append(options[selected_option-1])
         else:
             return options[selected_option-1]
     
