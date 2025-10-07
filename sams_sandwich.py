@@ -81,6 +81,20 @@ def force_phone(min, max):
         else:
             validated_number = unvalidated_number
             return validated_number
+        
+def print_order(order):
+    file = open("sams_sandwich.txt", "a")
+    file.write("\n****Customer order****\n")
+    for item in order:
+        if type(item) is list:
+            for i in item:
+                file.write(i+"\n")
+                print(i)
+        else:
+            file.write(item+"\n")
+            print(item)
+
+
 
 bread_options = ["White", "Wholemeal", "Malted Rye", "Flatbread", "Italian", "No bread"]
 meat_options = ["Pastrami", "Pepperoni", "Turkey", "Chicken", "Champaign Ham", "No meat"]
@@ -100,5 +114,4 @@ phone_number = force_phone(9, 12)
 
 sandwich_order = first_name, last_name, phone_number, selected_bread, selected_meat, selected_cheese, selected_salad, selected_dressing
 
-for item in sandwich_order:
-    print(item)
+print_order(sandwich_order)
