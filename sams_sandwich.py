@@ -75,11 +75,11 @@ def option_selection(options, subject, multi = False):
         
 def force_phone(min, max):
     while True:
-        unvalidated_number = str(input("Your mobile phone number: "))
-        if len(unvalidated_number) < min or len(unvalidated_number) > max or not unvalidated_number.isnumeric():
+        unverified_number = str(input("Your mobile phone number: "))
+        if len(unverified_number) < min or len(unverified_number) > max or not unverified_number.isnumeric():
             print(f"Your phone number must only have {min}-{max} numbers.")
         else:
-            validated_number = unvalidated_number
+            validated_number = unverified_number
             return validated_number
         
 def print_order(order):
