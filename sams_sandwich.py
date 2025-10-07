@@ -72,16 +72,6 @@ def option_selection(options, subject, multi = False):
         else:
             return options[selected_option-1]
     
-def salad_selection(options):
-    print("\n")
-    print("*"*5, f" SALAD SELECTIONS ", "*"*5)
-    print("You may pick as many salads as you would like.")
-    i = 0
-    for option in options:
-        print(f"{i+1}. {option}")
-        i += 1
-    print("*"*30, "\n")
-    
         
 def force_phone(min, max):
     while True:
