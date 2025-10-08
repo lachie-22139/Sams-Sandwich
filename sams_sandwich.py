@@ -99,23 +99,26 @@ def print_order(order):
     file.close()
 
 
+def get_user_order():
+    bread_options = ["White", "Wholemeal", "Sourdough", "Flatbread", "Italian", "No bread"]
+    meat_options = ["Bacon", "Pepperoni", "Turkey", "Chicken", "Ham", "No meat"]
+    cheese_options = ["Cheddar", "Mozzarella", "Edam", "Camembert", "No cheese"]
+    salad_options = ["Caesars salad", "Small lettuce salad", "Large lettuce salad", "Pasta salad", "Red salad", "No additional salad"]
+    dressing_options = ["Sulfuric acid", "Balsamic vinegar", "Sam's Special Dressing", "No dressing"]
 
-bread_options = ["White", "Wholemeal", "Malted Rye", "Flatbread", "Italian", "No bread"]
-meat_options = ["Pastrami", "Pepperoni", "Turkey", "Chicken", "Champaign Ham", "No meat"]
-cheese_options = ["Cheddar", "Mozzarella", "Edam", "Camembert", "No cheese"]
-salad_options = ["Caesars salad", "Small salad", "Large salad", "Blue salad", "Red Salad", "No salad"]
-dressing_options = ["Sulfuric acid", "Balsamic vinegar", "Sam's Special Dressing", "No dressing"]
+    selected_bread = option_selection(bread_options, "BREAD")
+    selected_meat = option_selection(meat_options, "MEAT")
+    selected_cheese = option_selection(cheese_options, "CHEESE")
+    selected_salad = option_selection(salad_options, "SALAD", True)
+    selected_dressing = option_selection(dressing_options, "DRESSING")
 
-selected_bread = option_selection(bread_options, "BREAD")
-selected_meat = option_selection(meat_options, "MEAT")
-selected_cheese = option_selection(cheese_options, "CHEESE")
-selected_salad = option_selection(salad_options, "SALAD", True)
-selected_dressing = option_selection(dressing_options, "DRESSING")
+    first_name = ["FIRST NAME", force_name("Enter your first name: ", 3, 20)]
+    last_name = ["LAST NAME", force_name("Enter your last name: ", 3, 20)]
+    phone_number = ["PHONE", force_phone(9, 12)]
 
-first_name = ["FIRST NAME", force_name("Enter your first name: ", 3, 20)]
-last_name = ["LAST NAME", force_name("Enter your last name: ", 3, 20)]
-phone_number = ["PHONE", force_phone(9, 12)]
+    sandwich_order = first_name, last_name, phone_number, selected_bread, selected_meat, selected_cheese, selected_salad, selected_dressing
+    return sandwich_order
 
-sandwich_order = first_name, last_name, phone_number, selected_bread, selected_meat, selected_cheese, selected_salad, selected_dressing
-
+# --- main routine ---
+sandwich_order = get_user_order()
 print_order(sandwich_order)
