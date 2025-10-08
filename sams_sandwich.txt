@@ -1,20 +1,13 @@
 
 ****Customer order****
-FIRST NAME: Dfij
-LAST NAME: Iwlfbfs
-PHONE: 1234567890
-BREAD: White
-MEAT: Pepperoni
-CHEESE: Edam
-
-****Customer order****
-FIRST NAME: Lsfn
-LAST NAME: Lsdnv
+Timestamp: 2025-10-08 14:44:44.203149
+FIRST NAME: Alan
+LAST NAME: Lorde
 PHONE: 1234567890
 BREAD: White
 MEAT: Pepperoni
 CHEESE: Edam
 SALAD:
-1: Blue salad
-2: Red Salad
+ - 1: Blue salad
+ - 2: Red Salad
 DRESSING: Sulfuric acid

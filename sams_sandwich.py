@@ -1,4 +1,4 @@
-# Thingy
+import datetime
 
 def force_name(message, min_length=2, max_length=20):
     # loop until a valid name is entered
@@ -85,8 +85,10 @@ def force_phone(min, max):
             return validated_number
         
 def print_order(order):
+    timestamp = datetime.datetime.now()
     file = open("sams_sandwich.txt", "a")
     file.write("\n****Customer order****\n")
+    file.write(f"Timestamp: {timestamp}\n")
     for item in order:
         if type(item[1]) is list:
             file.write(item[0]+":\n")
