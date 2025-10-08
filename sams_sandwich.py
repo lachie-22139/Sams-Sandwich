@@ -56,8 +56,10 @@ def option_selection(options, subject, multi = False):
         print("*"*5, f" {subject} SELECTIONS - Choose as many as you like", "*"*5)
     if multi:
         option_list = []
+    option_number = 0
     while True:
         i = 0
+        option_number += 1
         for option in options:
             print(f"{i+1}. {option}")
             i += 1
@@ -66,11 +68,11 @@ def option_selection(options, subject, multi = False):
         print(f"You selected '{options[selected_option-1]}'")
         if multi:
             if selected_option == max:
-                return option_list
+                return [subject, option_list]
             else:
-                option_list.append(options[selected_option-1])
+                option_list.append([option_number, options[selected_option-1]])
         else:
-            return options[selected_option-1]
+            return [subject, options[selected_option-1]]
     
         
 def force_phone(min, max):
@@ -86,13 +88,13 @@ def print_order(order):
     file = open("sams_sandwich.txt", "a")
     file.write("\n****Customer order****\n")
     for item in order:
-        if type(item) is list:
-            for i in item:
-                file.write(i+"\n")
-                print(i)
+        if type(item[1]) is list:
+            file.write(item[0]+":\n")
+            for i in item[1]:
+                file.write(f" - {i[0]}: {i[1]}\n")
         else:
-            file.write(item+"\n")
-            print(item)
+            file.write(f"{item[0]}: {item[1]}\n")
+    file.close()
 
 
 
@@ -108,9 +110,9 @@ selected_cheese = option_selection(cheese_options, "CHEESE")
 selected_salad = option_selection(salad_options, "SALAD", True)
 selected_dressing = option_selection(dressing_options, "DRESSING")
 
-first_name = force_name("Enter your first name: ", 3, 20)
-last_name = force_name("Enter your last name: ", 3, 20)
-phone_number = force_phone(9, 12)
+first_name = ["FIRST NAME", force_name("Enter your first name: ", 3, 20)]
+last_name = ["LAST NAME", force_name("Enter your last name: ", 3, 20)]
+phone_number = ["PHONE", force_phone(9, 12)]
 
 sandwich_order = first_name, last_name, phone_number, selected_bread, selected_meat, selected_cheese, selected_salad, selected_dressing
 

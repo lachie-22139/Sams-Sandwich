@@ -1,11 +1,20 @@
 
 ****Customer order****
-Bold
-Lummox
-020406853
-Flatbread
-Pastrami
-Mozzarella
-Red Salad
-Caesars salad
-Sam's Special Dressing
+FIRST NAME: Dfij
+LAST NAME: Iwlfbfs
+PHONE: 1234567890
+BREAD: White
+MEAT: Pepperoni
+CHEESE: Edam
+
+****Customer order****
+FIRST NAME: Lsfn
+LAST NAME: Lsdnv
+PHONE: 1234567890
+BREAD: White
+MEAT: Pepperoni
+CHEESE: Edam
+SALAD:
+1: Blue salad
+2: Red Salad
+DRESSING: Sulfuric acid
