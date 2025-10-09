@@ -50,7 +50,7 @@ def force_number(message, is_int, min=0, max=120):
 def option_selection(options, subject, multi = False):
     max = len(options)
     print("\n")
-    if (multi):
+    if (not multi):
         print("*"*5, f" {subject} SELECTIONS ", "*"*5)
     else:
         print("*"*5, f" {subject} SELECTIONS - Choose as many as you like", "*"*5)

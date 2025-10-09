@@ -11,3 +11,14 @@ SALAD:
  - 1: Blue salad
  - 2: Red Salad
 DRESSING: Sulfuric acid
+
+****Customer order****
+Timestamp: 2025-10-10 09:29:39.645890
+FIRST NAME: Bob
+LAST NAME: Jones
+PHONE: 021647364
+BREAD: White
+MEAT: Pepperoni
+CHEESE: No cheese
+SALAD:
+DRESSING: No dressing
