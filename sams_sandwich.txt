@@ -22,3 +22,32 @@ MEAT: Pepperoni
 CHEESE: No cheese
 SALAD:
 DRESSING: No dressing
+
+****Customer order****
+Timestamp: 2025-10-13 10:25:03.230669
+FIRST NAME: Michael
+LAST NAME: Kirkland
+PHONE: 111911111
+BREAD: Neutron star substrate
+MEAT: Chicken
+CHEESE: No cheese
+SALAD:
+ - 1: Red salad
+ - 2: Pasta salad
+ - 3: Small lettuce salad
+ - 4: Small lettuce salad
+ - 5: Small lettuce salad
+DRESSING: Anton's goop
+
+****Customer order****
+Timestamp: 2025-10-13 10:28:47.922536
+FIRST NAME: Michael
+LAST NAME: Kirkland
+PHONE: 111111111
+BREAD: Neutron star substrate
+MEAT: Pickled muckmaggot
+CHEESE: Cheddar
+SALAD:
+ - 1: Ebola salad
+ - 2: Large lettuce salad
+DRESSING: Sour fish sauce

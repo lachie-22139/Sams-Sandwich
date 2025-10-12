@@ -100,11 +100,11 @@ def print_order(order):
 
 
 def get_user_order():
-    bread_options = ["White", "Wholemeal", "Sourdough", "Flatbread", "Italian", "No bread"]
-    meat_options = ["Bacon", "Pepperoni", "Turkey", "Chicken", "Ham", "No meat"]
-    cheese_options = ["Cheddar", "Mozzarella", "Edam", "Camembert", "No cheese"]
-    salad_options = ["Caesars salad", "Small lettuce salad", "Large lettuce salad", "Pasta salad", "Red salad", "No additional salad"]
-    dressing_options = ["Sulfuric acid", "Balsamic vinegar", "Sam's Special Dressing", "No dressing"]
+    bread_options = ["White", "Wholemeal", "Sourdough", "Flatbread", "Neutron star substrate",  "No bread"]
+    meat_options = ["Bacon", "Pickled muckmaggot", "Turkey", "Chicken", "Ham", "No meat"]
+    cheese_options = ["Cheddar", "Mozzarella", "Edam", "Camembert", "Lively cheese", "Live cow (make your own)", "No cheese"]
+    salad_options = ["Caesars salad", "Ebola salad", "Large lettuce salad", "Pasta salad", "Red salad", "No additional salad"]
+    dressing_options = ["Sulfuric acid", "Balsamic vinegar", "Sam's Special Dressing", "Sour fish sauce", "Anton's goop", "No dressing"]
 
     selected_bread = option_selection(bread_options, "BREAD")
     selected_meat = option_selection(meat_options, "MEAT")
